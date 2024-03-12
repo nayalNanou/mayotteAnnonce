@@ -1,0 +1,71 @@
+
+.form-request-for-assistance {
+    max-width: 800px;
+    margin: auto;
+}
+
+.form-request-for-assistance > div {
+    margin-bottom: 20px;
+}
+
+.form-request-for-assistance label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 4px;
+}
+
+.form-request-for-assistance input,
+.form-request-for-assistance textarea {
+    width: 100%;
+    font-size: 1.2em;
+    border-radius: 4px;
+    border: 1px solid silver;
+    outline: none;
+}
+
+.form-request-for-assistance textarea {
+    min-height: 140px;
+}
+
+.form-request-for-assistance input[type="submit"] {
+    border: 1px solid silver;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.form-request-for-assistance input[type="submit"]:hover {
+    background: #EFEFEF;
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ticket-table th,
+.ticket-table td {
+    border: 1px solid silver;
+    padding: 4px 8px;
+    font-size: 1.2em;
+}
+
+.ticket-table .action a {
+    display: block;
+    width: max-content;
+    margin: auto;
+}
+
+.attachment-link {
+    background: rgb(240 243 245);
+    color: black;
+    padding: 10px 20px;
+    border: 1px solid #e7e7e7;
+    border-radius: 8px;
+    margin: 10px 0px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.attachment-link:hover {
+    background: rgb(239 239 239);
+}

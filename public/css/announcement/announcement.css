@@ -1,0 +1,87 @@
+
+.filter-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-field {
+    width: 42%;
+    margin-bottom: 18px;
+}
+
+.filter-field label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 4px;
+}
+
+.filter-field select,
+.filter-field input {
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid var(--border-color-2);
+    border-radius: var(--radius-value-1);
+}
+
+.filter-field select {
+    font-size: 1.1em;
+    padding: 5px 6px;
+    appearance: none;
+}
+
+.filter-field input {
+    font-size: 1.1em;
+    padding: 5px 6px;
+}
+
+.button-create-announcement {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--border-color-1);
+    background: var(--button-background-color-1);
+    color: var(--button-font-color-1);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 6px 16px;
+    box-sizing: border-box;
+    margin-bottom: 22px;
+    border-radius: var(--radius-value-1);
+}
+
+.announcement {
+    border: 1px solid var(--border-color-1);
+    margin-bottom: 18px;
+}
+
+.announcement-title {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color-1);
+    font-size: 1.15em;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    background: #f1f9fa;
+}
+
+.announcement-illustration {
+    float: left;
+    width: 140px;
+    display: block;
+    border-bottom: 1px solid var(--border-color-1);
+    border-radius: var(--radius-value-1);
+    margin: 14px 24px 14px 18px;
+    box-shadow: 0px 0px 6px silver;
+}
+
+.announcement-content {
+    padding-top: 4px;
+}
+
+.announcement-content p {
+    box-sizing: border-box;
+    padding: 8px 16px;
+    margin: 0px;
+    font-size: 1.1em;
+    line-height: 1.8em;
+}

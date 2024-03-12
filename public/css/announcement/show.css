@@ -1,0 +1,143 @@
+
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.announcement-header > .announcement-setting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.announcement-header > .announcement-setting > svg {
+    color: gray;
+    cursor: pointer;
+}
+
+.setting-menu {
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    background: white;
+    border: 1px solid var(--border-color-1);
+    min-width: 180px;
+}
+
+.setting-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid gray;
+    border-radius: var(--radius-value-1);
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.setting-menu a span {
+    display: block;
+    margin-left: 6px;
+}
+
+.setting-menu a.edit {
+    background: #ffc107;
+    color: white;
+}
+
+.setting-menu a.edit:hover {
+    background: #f7bb07;
+}
+
+.setting-menu a.delete {
+    background: #dc3545;
+    color: white;
+}
+
+.setting-menu a.delete:hover {
+    background: #cc3241;
+}
+
+.illustration-list {
+    padding: 14px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color-1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    background: #F6F6F6;
+}
+
+.announcement-illustration {
+    height: 140px;
+    border: 1px solid var(--border-color-1);
+    margin: 0px 10px;
+}
+
+.announcement-content {
+    font-size: 1.2em;
+    line-height: 1.8em;
+    margin: 20px 0px;
+}
+
+.comment-section {
+    border-top: 1px solid black;
+    padding-top: 18px;
+}
+
+.add-a-comment {
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.add-a-comment .comment-field {
+    border: none;
+    display: block;
+    border-bottom: 1px solid silver;
+    width: 100%;
+    font-size: 1.1em;
+    position: relative;
+    top: -5px;
+    outline: none;
+}
+
+.comment {
+    display: flex;
+    margin-bottom: 26px;
+}
+
+.user-avatar {
+    background: url('https://cdn.pixabay.com/photo/2017/07/18/23/23/user-2517433_640.png');
+    background-size: 100% auto;
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    border-radius: 100px;
+    margin-right: 16px;
+}
+
+.comment-body .comment-header {
+    display: flex;
+}
+
+.comment-header .user-name {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.comment-header .comment-date {
+    display: inline-block;
+    color: gray;
+}
+
+.comment-body .comment-content {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 0px;
+    margin-top: 4px;
+    color: #2F2F2F;
+}

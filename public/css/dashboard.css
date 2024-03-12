@@ -1,0 +1,83 @@
+:root {
+	--border-color-1: rgb(219, 219, 219);
+	--radius-value-1: 4px;
+	--link-font-color-1: #1A2238;
+	--link-font-color-hover-1: #1D2228;
+	--link-background-color-hover-1: #FAF0DC; 
+}
+
+main {
+	padding: 24px 40px;
+}
+
+main h2 {
+	font-size: 1.6em;
+}
+
+.dashboard {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left-side {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-side .user-avatar {
+    background: url('./../image/user_default_picture.png');
+    background-size: 100% auto;
+    width: 250px;
+    height: 250px;
+    border: 1px solid var(--border-color-1);
+	margin-bottom: 14px;
+}
+
+.left-side a {
+    display: block;
+    border: 1px solid var(--border-color-1);
+    padding: 20px;
+    margin: 12px 0px;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: var(--link-font-color-1);
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.left-side a:hover {
+	color: var(--link-font-color-hover-1);
+	background: var(--link-background-color-hover-1);
+}
+
+.right-side {
+    width: 55%;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    height: max-content;
+}
+
+.right-side .user-info {
+    /* margin: 0px 14px; */
+    margin-bottom: 10%;
+    border: 1px solid var(--border-color-1);
+}
+
+.right-side .user-info span {
+	display: block;
+	padding: 10px;
+}
+
+.right-side .user-info span.field-name {
+	font-size: 1.4em;
+	border-bottom: 1px solid var(--border-color-1);
+}
+
+.right-side .user-info span.field-value {
+	font-size: 1.2em;
+}

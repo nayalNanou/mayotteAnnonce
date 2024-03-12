@@ -1,0 +1,89 @@
+
+.decorative-image-website {    
+    background: url('https://www.bestjobersblog.com/wp-content/uploads/2018/09/65-Mayotte-Ilot-Sable-Blanc-Sud.jpg');
+    background-size: 100% auto;
+    height: 460px;
+    width: 100%;
+}
+
+/* main h2 {
+    width: 100%;
+    background: linear-gradient(0deg, white, #f8fbff, white);
+    text-align: center;
+    padding: 30px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 1.7em;
+} */
+
+.link-see-announcements {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+
+.link-see-announcements span {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    background: rgba(10,88,202, 0.8);
+    color: white;
+    padding: 24px 0px;
+    box-sizing: border-box;
+    left: 0px;
+    bottom: 0px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    transition: all linear 200ms;
+}
+
+.link-see-announcements span:hover {
+    background: rgba(6, 44, 102, 0.8);
+}
+
+/* .announcement-section {
+    padding: 14px 54px;
+} */
+
+.announcement-section h3 {
+    font-size: 1.7em;
+}
+
+.list-announcement {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.announcement {
+    width: 100%;
+    margin: 20px 0px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.announcement > a {
+    display: block;
+    border: 1px solid #CFCFCF;
+    cursor: pointer;
+    color: #2F2F2F;
+    text-decoration: none;
+}
+
+.announcement .announcement-title {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #CFCFCF;
+}
+
+.announcement .short-description {
+    padding: 14px;
+    font-size: 1.2em;
+    display: block;
+    min-height: 100px;
+}

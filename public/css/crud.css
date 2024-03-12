@@ -1,0 +1,31 @@
+
+.crud-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.crud-table td,
+.crud-table th {
+	border: 1px solid silver;
+	padding: 4px 20px;
+	text-align: left;
+	font-size: 1.2em;
+}
+
+.crud-table .action {
+	max-width: 20px;
+}
+
+.crud-table .action a {
+	display: inline-block;
+	margin: 0px 4px;
+	margin-top: 2px;
+}
+
+.crud-table .action .edit-button {
+	color: orange;
+}
+
+.crud-table .action .delete-button {
+	color: red;
+}
