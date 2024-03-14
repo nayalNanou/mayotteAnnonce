@@ -3,7 +3,7 @@ namespace App\Service;
 
 class FileHandler
 {
-    public function uploadFile($file)
+    public function uploadFile($file, $folder)
     {
         $originalName = $file->getClientOriginalName();
         $extension = $file->getClientOriginalExtension();
@@ -21,7 +21,7 @@ class FileHandler
 
         $pathName = $file->getPathName();
 
-        move_uploaded_file($pathName, __DIR__ . '/../../public/upload/' . $fileName);
+        move_uploaded_file($pathName, __DIR__ . '/../../public/' . $folder . '/' . $fileName);
 
         return $fileName;
     }

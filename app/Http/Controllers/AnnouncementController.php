@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementCategory;
 use App\Models\Announcement;
+use App\Service\FileHandler;
 
 class AnnouncementController extends Controller
 {
@@ -53,6 +54,14 @@ class AnnouncementController extends Controller
         $announcement->description = $request->input('announcement-description');
         $announcement->announcement_categories_id = $request->input('announcement-category');
         $announcement->number_of_views = 0;
+        $announcement->price = $request->input('announcement-price');
+
+        if ($request->hasFile('announcement-image')) {
+            $file = $request->file('announcement-image');
+
+            $fileHandler = new FileHandler();
+            $announcement->image = $fileHandler->uploadFile($file, 'upload/announcement');
+        }
 
         $announcement->save();
 

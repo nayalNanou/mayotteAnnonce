@@ -36,42 +36,26 @@
                 <a href="{{ route('announcement_add') }}" class="button-create-announcement">+ Créer une annonce</a>
 
                 <div class="list-announcement">
-                    <!-- Display the announcements here -->
-
-                    @foreach ($announcements as $announcement)
-                        <div class="announcement">
-                            <a href="{{ route('announcement_show', ['id' => $announcement['id']]) }}">
-                                <span class="announcement-title">{{ $announcement['title'] }}</span>
-                                <div class="announcement-content">
-                                    <p class="announcement-content">{{ $announcement['description'] }}</p>
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
-
-                    <!-- <div class="announcement">
-                        <span class="announcement-title">Titre de l'annonce</span>
-                        <div class="announcement-content">
-                            <img src="https://cdn-images-1.medium.com/v2/resize:fit:2000/1*9UN-8OUzyVJBaKiVNX5dig.png" alt="announcement-illustration" class="announcement-illustration" />
-                            <p>Cras laoreet quam mi, a rhoncus magna faucibus sit amet. In sagittis ante ac lorem cursus, vitae rutrum ligula tincidunt. Integer diam nisl, volutpat id est eget, posuere lacinia lectus. Aenean vel urna mattis, elementum erat eu, sagittis velit. Phasellus porta lectus vel erat sollicitudin tincidunt. Sed elementum ullamcorper orci, a volutpat ligula tincidunt aliquam. Proin rutrum ultricies mi vitae fringilla. Nulla at lacus hendrerit, euismod tortor eu, tempor felis. Praesent nec tempus massa. Morbi ut commodo diam. Praesent ac neque nisl. Ut consequat, magna luctus porttitor eleifend, ex nulla hendrerit enim, sit amet tristique dui velit ac ipsum. Donec posuere aliquet faucibus. Vivamus pulvinar interdum nisi ut volutpat.</p>
-                        </div>
-                    </div>
-
-                    <div class="announcement">
-                        <span class="announcement-title">Titre de l'annonce</span>
-                        <div class="announcement-content">
-                            <p class="announcement-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis, sapien vel viverra dapibus, ante magna blandit justo, non porttitor turpis ipsum at odio. Fusce...</p>
-                        </div>
-                    </div>
-
-                    <div class="announcement">
-                        <span class="announcement-title">Titre de l'annonce</span>
-                        <div class="announcement-content">
-                            <p class="announcement-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis, sapien vel viverra dapibus, ante magna blandit justo, non porttitor turpis ipsum at odio. Fusce...</p>
-                        </div>
-                    </div> -->
-
-                    <!-- Display the announcements here -->
+				    @if (count($announcements) == 0)
+                        <p>Il n'y a pas d'annonces</p>
+                    @else
+                        @foreach ($announcements as $announcement)
+                            <div class="announcement">
+                                <a href="{{ route('announcement_show', ['id' => $announcement['id']]) }}">
+                                    <span class="announcement-title">
+                                        {{ $announcement['title'] }}
+                                        @if (!empty($announcement['price']))
+                                            - {{ $announcement['price'] }}€
+                                        @endif
+                                    </span>
+                                    <div class="announcement-content">
+                                        <img src="/upload/announcement/{{ $announcement['image'] }}" alt="announcement-illustration" class="announcement-illustration" />
+                                        <p>{{ $announcement['description'] }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </main>
         </div>

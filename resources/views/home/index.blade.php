@@ -22,32 +22,26 @@
 					<h3>Annonces les plus vues du mois</h3>
 
 					<div class="list-announcement">
-
-						<!-- Example announcements -->
-
-						<div class="announcement">
-							<a href="#">
-								<span class="announcement-title">Titre de l'annonce</span>
-								<span class="short-description">Courte description de l'annonce...</span>
-							</a>
-						</div>
-
-						<div class="announcement">
-							<a href="#">
-								<span class="announcement-title">Titre de l'annonce</span>
-								<span class="short-description">Courte description de l'annonce...</span>
-							</a>
-						</div>
-
-						<div class="announcement">
-							<a href="#">
-								<span class="announcement-title">Titre de l'annonce</span>
-								<span class="short-description">Courte description de l'annonce...</span>
-							</a>
-						</div>
-
-						<!-- Example announcements -->
-
+						@if (count($announcements) == 0)
+							<p>Il n'y a pas d'annonces</p>
+						@else
+							@foreach ($announcements as $announcement)
+								<div class="announcement">
+									<a href="{{ route('announcement_show', ['id' => $announcement['id']]) }}">
+										<span class="announcement-title">
+											{{ $announcement['title'] }}
+											@if (!empty($announcement['price']))
+												- {{ $announcement['price'] }}€
+											@endif
+										</span>
+										<div class="announcement-content">
+											<img src="/upload/announcement/{{ $announcement['image'] }}" alt="announcement-illustration" class="announcement-illustration" />
+											<p>{{ $announcement['description'] }}</p>
+										</div>
+									</a>
+								</div>
+							@endforeach
+						@endif
 					</div>
 				</div>
 			</main>

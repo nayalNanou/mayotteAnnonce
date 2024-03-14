@@ -30,11 +30,11 @@
 					</div>
 				</div>
 
-                <div class="illustration-list">
-                    <img alt="announcement-illustration" class="announcement-illustration" src="#" />
-                    <img alt="announcement-illustration" class="announcement-illustration" src="#" />
-                    <img alt="announcement-illustration" class="announcement-illustration" src="#" />
-                </div>
+                @if (!empty($announcement['image']))
+                    <div class="illustration-list">
+                        <img alt="announcement-illustration" class="announcement-illustration" src="/upload/announcement/{{ $announcement['image'] }}" />
+                    </div>
+                @endif
 
                 <p class="announcement-content">{{ $announcement['description'] }}</p>
 
@@ -83,19 +83,6 @@
                 </div>
             </main>
         </div>
-
-        <!-- Delete this -->
-
-        <script>
-            const announcementIllustrations = document.querySelectorAll('.announcement-illustration');
-            const announcementIllustrationsLen = announcementIllustrations.length;
-
-            for (let i = 0; i < announcementIllustrationsLen; i++) {
-                announcementIllustrations[i].src = "https://cdn-images-1.medium.com/v2/resize:fit:2000/1*9UN-8OUzyVJBaKiVNX5dig.png";
-            }
-        </script>
-
-        <!-- Delete this -->
 
 		<script type="text/javascript" src="./../../js/script.js"></script>
         <script type="text/javascript" src="./../../js/announcement/show.js"></script> 

@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/announcement/index', [AnnouncementController::class, 'index'])->name('announcement_index');
     Route::get('/announcement/{id}/show', [AnnouncementController::class, 'show'])->name('announcement_show');
     Route::get('/announcement/add', [AnnouncementController::class, 'add'])->name('announcement_add');
-    Route::get('/announcement/save', [AnnouncementController::class, 'save'])->name('announcement_save');
+    Route::post('/announcement/save', [AnnouncementController::class, 'save'])->name('announcement_save');
     Route::get('/announcement/{id}/edit', [AnnouncementController::class, 'edit'])->name('announcement_edit');
     Route::get('/announcement/{id}/delete', [AnnouncementController::class, 'delete'])->name('announcement_delete');
 
