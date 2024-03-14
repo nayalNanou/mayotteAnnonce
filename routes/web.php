@@ -48,7 +48,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/announcement/add', [AnnouncementController::class, 'add'])->name('announcement_add');
     Route::post('/announcement/save', [AnnouncementController::class, 'save'])->name('announcement_save');
     Route::get('/announcement/{id}/edit', [AnnouncementController::class, 'edit'])->name('announcement_edit');
+    Route::post('/announcement/update', [AnnouncementController::class, 'update'])->name('announcement_update');
     Route::get('/announcement/{id}/delete', [AnnouncementController::class, 'delete'])->name('announcement_delete');
+    Route::get('/announcement/{id}/on_click_announcement', [AnnouncementController::class, 'onClickAnnouncement'])->name('announcement_click');
 
     Route::get('/announcement_category/index', [AnnouncementCategoryController::class, 'index'])->name('announcement_category_index');
     Route::get('/announcement_category/add', [AnnouncementCategoryController::class, 'add'])->name('announcement_category_add');
@@ -56,6 +58,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/announcement_category/{id}/show', [AnnouncementCategoryController::class, 'show'])->name('announcement_category_show');
     Route::get('/announcement_category/update', [AnnouncementCategoryController::class, 'update'])->name('announcement_category_update');
     Route::get('/announcement_category/{id}/delete', [AnnouncementCategoryController::class, 'delete'])->name('announcement_category_delete');
+
+    Route::post('/message/save', [MessageController::class, 'save'])->name('message_save');
 
         // Route::resource('ticket', TicketController::class)->names([
         //     'form' => 'form',
@@ -69,13 +73,12 @@ Route::middleware('auth')->group(function () {
         //     'message' => MessageController::class,
         // ]);
 
-    Route::post('/message/store', [MessageController::class, 'store'])->name('message_store');
+    // Route::post('/message/store', [MessageController::class, 'store'])->name('message_store');
 
-Route::get('/pdf', function () {
-    $pdf = PDF::loadView('invoice', ['My Big Burger']);
-    return $pdf->download('invoice.pdf');
-});
-
+    // Route::get('/pdf', function () {
+    //     $pdf = PDF::loadView('invoice', ['My Big Burger']);
+    //     return $pdf->download('invoice.pdf');
+    // });
 });
 
 

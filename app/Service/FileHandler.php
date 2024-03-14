@@ -26,8 +26,8 @@ class FileHandler
         return $fileName;
     }
 
-    public function deleteFile($fileName)
+    public function deleteFile($fileName, $folder)
     {
-        unlink(__DIR__ . '/../../public/upload/' . $fileName);
+        unlink(__DIR__ . '/../../public/' . $folder . '/' . $fileName);
     }
 }

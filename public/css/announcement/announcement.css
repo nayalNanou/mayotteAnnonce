@@ -1,4 +1,8 @@
 
+.filter-form {
+    margin-bottom: 18px;
+}
+
 .filter-fields {
     display: flex;
     justify-content: space-between;
@@ -6,7 +10,7 @@
 
 .filter-field {
     width: 42%;
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 }
 
 .filter-field label {
@@ -35,7 +39,8 @@
     padding: 5px 6px;
 }
 
-.button-create-announcement {
+.button-create-announcement,
+.filter-form input[type="submit"] {
     display: block;
     width: 100%;
     border: 1px solid var(--border-color-1);
@@ -47,6 +52,17 @@
     box-sizing: border-box;
     margin-bottom: 22px;
     border-radius: var(--radius-value-1);
+    cursor: pointer;
+}
+
+.filter-form input[type="submit"] {
+    background: var(--button-background-color-2);
+    color: var(--button-font-color-2);
+    border: 1px solid silver;
+}
+
+.filter-form input[type="submit"]:hover {
+    background: var(--button-background-color-hover-2);
 }
 
 /* announcement */
@@ -61,14 +77,24 @@
     color: black;
 }
 
-.announcement-title {
-    display: block;
-    width: 100%;
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
     border-bottom: 1px solid var(--border-color-1);
-    font-size: 1.15em;
-    padding: 6px 10px;
     box-sizing: border-box;
     background: #f1f9fa;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+.announcement-title {
+    display: block;
+    font-size: 1.15em;
+    background: #f1f9fa;
+}
+
+.announcement-views {
+    display: block;
 }
 
 .announcement-illustration {

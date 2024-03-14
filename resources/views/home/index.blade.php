@@ -27,16 +27,22 @@
 						@else
 							@foreach ($announcements as $announcement)
 								<div class="announcement">
-									<a href="{{ route('announcement_show', ['id' => $announcement['id']]) }}">
-										<span class="announcement-title">
-											{{ $announcement['title'] }}
-											@if (!empty($announcement['price']))
-												- {{ $announcement['price'] }}€
-											@endif
-										</span>
+									<a href="{{ route('announcement_click', ['id' => $announcement->id]) }}">
+										<div class="announcement-header">
+											<div>
+												<span class="announcement-title">
+													{{ $announcement->title }}
+													@if (!empty($announcement->price))
+														- {{ $announcement->price }}€
+													@endif
+												</span>
+												<span class="announcement-views">{{ $announcement->number_of_views }} vues</span>
+											</div>
+											<span class="time-elapsed">{{ $toolbox->time_elapsed_string($announcement->created_at) }}</span>
+										</div>
 										<div class="announcement-content">
-											<img src="/upload/announcement/{{ $announcement['image'] }}" alt="announcement-illustration" class="announcement-illustration" />
-											<p>{{ $announcement['description'] }}</p>
+											<img src="/upload/announcement/{{ $announcement->image }}" alt="announcement-illustration" class="announcement-illustration" />
+											<p>{{ $announcement->description }}</p>
 										</div>
 									</a>
 								</div>

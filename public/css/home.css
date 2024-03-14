@@ -77,14 +77,33 @@
     color: black;
 }
 
-.announcement-title {
-    display: block;
-    width: 100%;
+.announcement-header {
     border-bottom: 1px solid var(--border-color-1);
-    font-size: 1.15em;
-    padding: 6px 10px;
     box-sizing: border-box;
     background: #f1f9fa;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+.announcement-header > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.announcement-title {
+    display: block;
+    font-size: 1.15em;
+    background: #f1f9fa;
+}
+
+.time-elapsed {
+    display: inline-block;
+    color: var(--font-color-2);
+    margin-top: 4px;
+}
+
+.announcement-views {
+    display: block;
 }
 
 .announcement-illustration {

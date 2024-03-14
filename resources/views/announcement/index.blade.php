@@ -15,23 +15,26 @@
             <main>
                 <h2>Liste des annonces</h2>
 
-                <div class="filter-fields">
-                    <div class="filter-field" id="categorie-filter">
-                        <label for="announcement-category">Catégorie</label>
-                        <select id="announcement-category" name="announcement-category">
-                            <option value="all">Tous</option>
-                            <option value="sport">Sport</option>
-                            <option value="real_estate">Immobilier</option>
-                            <option value="video_games">Jeux vidéos</option>
-                            <option value="politics">Politique</option>
-                        </select>
+                <form method="get" action="{{ route('announcement_index') }}" class="filter-form">
+                    <div class="filter-fields" method="get" action="{{ route('announcement_index') }}">
+                        <div class="filter-field" id="categorie-filter">
+                            <label for="announcement-category">Catégorie</label>
+                            <select id="announcement-category" name="announcement-category">
+                                <option value="all">Tous</option>
+                                @foreach ($announcementCategories as $announcementCategory)
+                                    <option {{ $categoryFilter == $announcementCategory['id'] ? 'selected' : null }} value="{{ $announcementCategory['id'] }}">{{ $announcementCategory['name'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="filter-field">
+                            <label for="announcement-search">Recherche</label>
+                            <input type="search" id="announcement-search" name="announcement-search" value="{{ $searchFilter }}" />
+                        </div>
                     </div>
 
-                    <div class="filter-field">
-                        <label for="announcement-search">Recherche</label>
-                        <input type="search" id="announcement-search" name="announcement-search" />
-                    </div>
-                </div>
+                    <input type="submit" value="Filtrer" />
+                </form>
 
                 <a href="{{ route('announcement_add') }}" class="button-create-announcement">+ Créer une annonce</a>
 
@@ -41,16 +44,19 @@
                     @else
                         @foreach ($announcements as $announcement)
                             <div class="announcement">
-                                <a href="{{ route('announcement_show', ['id' => $announcement['id']]) }}">
-                                    <span class="announcement-title">
-                                        {{ $announcement['title'] }}
-                                        @if (!empty($announcement['price']))
-                                            - {{ $announcement['price'] }}€
-                                        @endif
-                                    </span>
+                                <a href="{{ route('announcement_click', ['id' => $announcement->id]) }}">
+                                    <div class="announcement-header">
+                                        <span class="announcement-title">
+                                            {{ $announcement->title }}
+                                            @if (!empty($announcement->price))
+                                                - {{ $announcement->price }}€
+                                            @endif
+                                        </span>
+                                        <span class="announcement-views">{{ $announcement->number_of_views }} vues</span>
+                                    </div>
                                     <div class="announcement-content">
-                                        <img src="/upload/announcement/{{ $announcement['image'] }}" alt="announcement-illustration" class="announcement-illustration" />
-                                        <p>{{ $announcement['description'] }}</p>
+                                        <img src="/upload/announcement/{{ $announcement->image }}" alt="announcement-illustration" class="announcement-illustration" />
+                                        <p>{{ $announcement->description }}</p>
                                     </div>
                                 </a>
                             </div>

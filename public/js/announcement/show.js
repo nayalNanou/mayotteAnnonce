@@ -25,11 +25,12 @@ const announcementDeleteButton = document.getElementById('announcement-delete-bu
 const confirmDeletion = (e) => {
     e.preventDefault();
 
+// console.log(e.target.href);
+
     const isConfirmed = confirm("Souhaitez-vous vraiment supprimer cette annonce ?");
 
     if (isConfirmed) {
-        // Insert here the url to delete the announcement
-        window.location.assign("#");
+        window.location.assign(e.target.href);
     }
 }
 

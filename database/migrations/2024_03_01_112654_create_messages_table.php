@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->string('content');
-            $table->dateTime('message_date');
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users');
             $table->unsignedBigInteger('announcements_id');

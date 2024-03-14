@@ -1,12 +1,19 @@
 :root {
+	--font-color-2: #6F6F6F;
+
 	--border-color-1: rgb(219, 219, 219);
 	--border-color-2: rgb(206, 206, 206);
 	--radius-value-1: 4px;
 	--link-font-color-1: #1A2238;
 	--link-font-color-hover-1: #1D2228;
 	--link-background-color-hover-1: #FAF0DC;
+
 	--button-background-color-1: #0a58ca;
 	--button-font-color-1: white;
+
+	--button-background-color-2: #EFEFEF;
+	--button-background-color-hover-2: #e0e0e0;
+	--button-font-color-2: black;
 }
 
 body {
@@ -107,4 +114,33 @@ main {
 
 main h2 {
 	font-size: 1.6em;
+}
+
+.back-button {
+    display: flex;
+	align-items: center;
+    width: 100%;
+    border: 1px solid var(--border-color-1);
+    background: var(--button-background-color-2);
+    color: var(--button-font-color-2);
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 6px 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-radius: var(--radius-value-1);
+    cursor: pointer;
+}
+
+.back-button svg {
+	display: inline-block;
+}
+
+.back-button span {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.back-button:hover {
+    background: var(--button-background-color-hover-2);
 }
