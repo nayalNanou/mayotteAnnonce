@@ -20,8 +20,8 @@
 					<div class="left-side">
 						<div id="user-avatar" class="user-avatar"></div>
 
-						<a href="{{ route('announcement_index') }}">Voir mes annonces</a>
-						<a href="{{ route('announcement_index') }}">Voir la liste des annonces</a>
+						<a href="{{ route('announcement_user') }}">Mes annonces</a>
+						<a href="{{ route('announcement_index') }}">Liste des annonces</a>
 						<a href="{{ route('announcement_add') }}">Créer une annonce</a>
 						<a href="{{ route('profile.edit') }}">Gérer mon compte</a>
 						<a href="{{ route('announcement_category_index') }}">Gérer les catégories d'annonces</a>
@@ -46,6 +46,11 @@
 						<div class="user-info">
 							<span class="field-name">Téléphone</span>
 							<span class="field-value">{{ $user['phone'] }}</span>
+						</div>
+
+						<div class="user-info">
+							<span class="field-name">Role</span>
+							<span class="field-value">Administrateur</span>
 						</div>
 					</div>
 				</div>

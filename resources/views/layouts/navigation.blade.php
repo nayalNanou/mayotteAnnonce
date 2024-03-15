@@ -15,12 +15,6 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Tableau de bord') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('user_tickets')" :active="request()->routeIs('user_tickets')">
-                        {{ __('Tickets envoyés') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('ticket_form')" :active="request()->routeIs('ticket_form')">
-                        {{ __('Demande d\'assistance') }}
-                    </x-nav-link>
                 </div>
             </div>
 
@@ -40,8 +34,12 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        <x-dropdown-link :href="route('dashboard')">
+                            {{ __('Tableau de bord') }}
+                        </x-dropdown-link>
+
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Profil') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -51,7 +49,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Se déconnecter') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

@@ -15,6 +15,7 @@ class AnnouncementController extends Controller
     public function index(Request $request): View
     {
         $user = auth()->user();
+        $toolbox = new Toolbox();
 
         $categoryFilter = $request->input('announcement-category');
         $searchFilter = $request->input('announcement-search');
@@ -47,6 +48,7 @@ class AnnouncementController extends Controller
 
         return view('announcement/index', [
             'user' => $user,
+            'toolbox' => $toolbox,
             'announcements' => $announcements,
             'announcementCategories' => $announcementCategories,
             'categoryFilter' => $categoryFilter,
@@ -71,6 +73,16 @@ class AnnouncementController extends Controller
 
         $announcement = Announcement::findOrFail($id);
 
+        $userContact = DB::select('
+            SELECT u.firstname, u.lastname, u.email, u.phone
+            FROM announcements AS a
+            INNER JOIN users AS u
+            ON a.users_id = u.id
+            WHERE a.id = :announcement_id
+        ', [
+            'announcement_id' => $id
+        ]);
+
         $sql = '
             SELECT m.id, m.content, u.firstname, u.lastname, m.created_at 
             FROM messages AS m
@@ -89,7 +101,29 @@ class AnnouncementController extends Controller
             'user' => $user,
             'announcement' => $announcement,
             'messages' => $messages,
-            'toolbox' => $toolbox
+            'toolbox' => $toolbox,
+            'userContact' => $userContact
+        ]);
+    }
+
+    public function announcementUser(): View
+    {
+        $user = auth()->user();
+
+        $sql = '
+            SELECT a.id, a.title, ac.name AS category, a.price, a.number_of_views
+            FROM announcements AS a
+            INNER JOIN announcement_categories AS ac
+            ON a.announcement_categories_id = ac.id
+            WHERE a.users_id = :users_id
+        ';
+
+        $announcements = DB::select($sql, [
+            'users_id' => $user->id
+        ]);
+
+        return view('announcement/announcement_user', [
+            'announcements' => $announcements
         ]);
     }
 

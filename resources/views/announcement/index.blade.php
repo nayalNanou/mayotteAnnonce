@@ -46,13 +46,16 @@
                             <div class="announcement">
                                 <a href="{{ route('announcement_click', ['id' => $announcement->id]) }}">
                                     <div class="announcement-header">
-                                        <span class="announcement-title">
-                                            {{ $announcement->title }}
-                                            @if (!empty($announcement->price))
-                                                - {{ $announcement->price }}€
-                                            @endif
-                                        </span>
-                                        <span class="announcement-views">{{ $announcement->number_of_views }} vues</span>
+                                        <div>
+                                            <span class="announcement-title">
+                                                {{ $announcement->title }}
+                                                @if (!empty($announcement->price))
+                                                    - {{ $announcement->price }}€
+                                                @endif
+                                            </span>
+                                            <span class="announcement-views">{{ $announcement->number_of_views }} vues</span>
+                                        </div>
+                                        <span class="time-elapsed">{{ $toolbox->time_elapsed_string($announcement->created_at) }}</span>
                                     </div>
                                     <div class="announcement-content">
                                         <img src="/upload/announcement/{{ $announcement->image }}" alt="announcement-illustration" class="announcement-illustration" />

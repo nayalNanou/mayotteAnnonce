@@ -23,7 +23,7 @@
 
 					<div class="list-announcement">
 						@if (count($announcements) == 0)
-							<p>Il n'y a pas d'annonces</p>
+							<p>Aucune annonce n'a été posté ce mois-ci</p>
 						@else
 							@foreach ($announcements as $announcement)
 								<div class="announcement">

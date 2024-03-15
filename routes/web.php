@@ -31,6 +31,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home_index');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [userController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/announcement/index', [AnnouncementController::class, 'index'])->name('announcement_index');
+Route::get('/announcement/{id}/show', [AnnouncementController::class, 'show'])->name('announcement_show');
+    Route::get('/announcement/{id}/on_click_announcement', [AnnouncementController::class, 'onClickAnnouncement'])->name('announcement_click');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -43,14 +46,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/ticket/{id}/show', [TicketController::class, 'show'])->name('ticket_show');
     Route::post('/ticket/update', [TicketController::class, 'update'])->name('ticket_update');
 
-    Route::get('/announcement/index', [AnnouncementController::class, 'index'])->name('announcement_index');
-    Route::get('/announcement/{id}/show', [AnnouncementController::class, 'show'])->name('announcement_show');
     Route::get('/announcement/add', [AnnouncementController::class, 'add'])->name('announcement_add');
     Route::post('/announcement/save', [AnnouncementController::class, 'save'])->name('announcement_save');
     Route::get('/announcement/{id}/edit', [AnnouncementController::class, 'edit'])->name('announcement_edit');
     Route::post('/announcement/update', [AnnouncementController::class, 'update'])->name('announcement_update');
     Route::get('/announcement/{id}/delete', [AnnouncementController::class, 'delete'])->name('announcement_delete');
-    Route::get('/announcement/{id}/on_click_announcement', [AnnouncementController::class, 'onClickAnnouncement'])->name('announcement_click');
+    Route::get('/announcement/user', [AnnouncementController::class, 'announcementUser'])->name('announcement_user');
 
     Route::get('/announcement_category/index', [AnnouncementCategoryController::class, 'index'])->name('announcement_category_index');
     Route::get('/announcement_category/add', [AnnouncementCategoryController::class, 'add'])->name('announcement_category_add');

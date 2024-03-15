@@ -20,18 +20,17 @@ announcementSettingIcon.addEventListener('click', hideOrDisplaySettingMenu);
 
 /* Confirmation to delete the announcement */
 
-const announcementDeleteButton = document.getElementById('announcement-delete-button');
+// const announcementDeleteButton = document.getElementById('announcement-delete-button');
 
-const confirmDeletion = (e) => {
-    e.preventDefault();
+// const confirmDeletion = (e) => {
+//     e.preventDefault();
+//     const targetPath = e.target.href;
 
-// console.log(e.target.href);
+//     const isConfirmed = confirm("Souhaitez-vous vraiment supprimer cette annonce ?");
 
-    const isConfirmed = confirm("Souhaitez-vous vraiment supprimer cette annonce ?");
+//     if (isConfirmed) {
+//         window.location.replace(targetPath);
+//     }
+// }
 
-    if (isConfirmed) {
-        window.location.assign(e.target.href);
-    }
-}
-
-announcementDeleteButton.addEventListener('click', confirmDeletion);
+// announcementDeleteButton.addEventListener('click', confirmDeletion);

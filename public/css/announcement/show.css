@@ -4,6 +4,10 @@
     justify-content: space-between;
 }
 
+.announcement-header h2 {
+    margin-bottom: 4px;
+}
+
 .announcement-header > .announcement-setting {
     display: flex;
     justify-content: center;
@@ -61,6 +65,12 @@
     background: #cc3241;
 }
 
+.time-elapsed {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--font-color-2);
+}
+
 .illustration-list {
     padding: 14px;
     box-sizing: border-box;
@@ -82,6 +92,21 @@
     font-size: 1.2em;
     line-height: 1.8em;
     margin: 20px 0px;
+}
+
+.title-contact-info {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.user-contact {
+    margin-bottom: 20px;
+}
+
+.user-contact span {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 4px;
 }
 
 .comment-section {

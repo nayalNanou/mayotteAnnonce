@@ -12,7 +12,6 @@ class HomeController extends Controller
 {
     public function index(): View
     {
-        $user = auth()->user();
         $currentDate = new \DateTime();
         $toolbox = new Toolbox();
 
@@ -30,7 +29,6 @@ class HomeController extends Controller
         );
 
         return view('home/index', [
-            'user' => $user,
             'announcements' => $announcements,
             'toolbox' => $toolbox,
         ]);

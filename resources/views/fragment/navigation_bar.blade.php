@@ -3,9 +3,9 @@
 	@if (Route::has('login'))
 		<div class="user-information">
 			<span class="user-full-name">
-				@if (isset($user) && !empty($user))
-					{{ $user['firstname'] }} {{ $user['lastname'] }}
-				@endif
+				@auth
+					{{ auth()->user()->firstname }} {{ auth()->user()->lastname }}
+				@endauth
 			</span>
 			<div id="user-icon" class="user-icon">
 				<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
