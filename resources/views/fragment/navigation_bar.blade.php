@@ -15,6 +15,8 @@
 				</svg>
 				<div id="user-menu" class="user-menu">
 					@auth
+						<span class="user-name">{{ ucfirst(auth()->user()->firstname) }} {{ ucfirst(auth()->user()->lastname) }}</span>
+
 						<a class="user-navigation-link" href="{{ url('/dashboard') }}">Tableau de bord</a>
 
 						<a class="user-navigation-link" href="{{ url('/profile') }}">Profil</a>

@@ -26,12 +26,12 @@ body {
 
 #page {
 	width: 70%;
-	min-width: 850px;
+	/* min-width: 850px */;
 	margin: auto;
 	background: white;
 	min-height: 100vh;
 	max-width: 1000px;
-	box-sizing: 0px 0px 10px black;
+	box-sizing: border-box;
 }
 
 .navigation-bar {
@@ -103,6 +103,16 @@ body {
 	font-size: 1.2em;
 }
 
+.user-menu .user-name {
+	display: block;
+	padding: 6px 18px;
+	border-bottom: 1px solid var(--border-color-1);
+	background: var(--link-background-color-hover-1);
+	color: teal;
+	font-size: 0.85em;
+	text-align: center;
+}
+
 .user-menu .user-navigation-link:hover {
 	color: var(--link-font-color-hover-1);
 	background: var(--link-background-color-hover-1);
@@ -143,4 +153,16 @@ main h2 {
 
 .back-button:hover {
     background: var(--button-background-color-hover-2);
+}
+
+@media all and (max-width: 850px) {
+	#page { 
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 500px) {
+	.user-full-name {
+		display: none;
+	}
 }

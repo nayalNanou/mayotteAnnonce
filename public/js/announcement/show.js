@@ -4,19 +4,21 @@
 const announcementSettingIcon = document.getElementById('announcement-setting-icon');
 const settingMenu = document.getElementById('setting-menu');
 
-settingMenu.style.display = 'none';
+if (announcementSettingIcon && settingMenu) {
+    settingMenu.style.display = 'none';
 
-const hideOrDisplaySettingMenu = () => {
-    const settingMenuDisplayValue = getComputedStyle(settingMenu).display;
+    const hideOrDisplaySettingMenu = () => {
+        const settingMenuDisplayValue = getComputedStyle(settingMenu).display;
 
-    if (settingMenuDisplayValue == 'block') {
-        settingMenu.style.display = 'none';
-    } else {
-        settingMenu.style.display = 'block';
+        if (settingMenuDisplayValue == 'block') {
+            settingMenu.style.display = 'none';
+        } else {
+            settingMenu.style.display = 'block';
+        }
     }
-}
 
-announcementSettingIcon.addEventListener('click', hideOrDisplaySettingMenu);
+    announcementSettingIcon.addEventListener('click', hideOrDisplaySettingMenu);
+}
 
 /* Confirmation to delete the announcement */
 

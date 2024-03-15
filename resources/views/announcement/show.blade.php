@@ -67,7 +67,7 @@
                             <div class="user-avatar"></div>
                             <input type="hidden" id="announcement-id" name="announcement-id" value="{{ $announcement->id }}" />
                             <input type="hidden" id="user-id" name="user-id" value="{{ auth()->user()->id }}" />
-                            <input type="text" id="comment-field" name="comment-field" placeholder="Ajouter un commentaire..." class="comment-field" />
+                            <input type="text" id="comment-field" name="comment-field" placeholder="Ajouter un commentaire..." class="comment-field" maxlength="255" />
                         </form>
                     @endauth
 

@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementCategory;
 use App\Models\Announcement;
+use App\Models\Message;
 use App\Service\FileHandler;
 use App\Service\Toolbox;
 use Illuminate\Support\Facades\DB;
@@ -200,9 +201,17 @@ class AnnouncementController extends Controller
     {
         $announcement = Announcement::findOrFail($id);
 
-        if ($announcement->image) {
+        $filePath = __DIR__ . '/../../../public/upload/announcement/' . $announcement->image;
+
+        if ($announcement->image && file_exists($filePath)) {
             $fileHandler = new FileHandler();
             $fileHandler->deleteFile($announcement->image, 'upload/announcement');
+        }
+
+        $messages = Message::where('announcements_id', $announcement->id)->get();
+
+        foreach ($messages as $message) {
+            $message->delete();
         }
 
         $announcement->delete();

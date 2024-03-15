@@ -11,7 +11,9 @@ class MessageController extends Controller
     {
         $message = new Message();
 
-        $message->content = $request->input('comment-field');
+        $messageContent = substr($request->input('comment-field'), 0, 255);
+
+        $message->content = $messageContent;
         $message->users_id = $request->input('user-id');
         $message->announcements_id = $request->input('announcement-id');
 

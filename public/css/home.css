@@ -1,7 +1,8 @@
 
 .decorative-image-website {    
     background: url('https://www.bestjobersblog.com/wp-content/uploads/2018/09/65-Mayotte-Ilot-Sable-Blanc-Sud.jpg');
-    background-size: 100% auto;
+    background-size: 100% 100%;
+    background-position: 50% 0px;
     height: 460px;
     width: 100%;
 }
@@ -126,4 +127,14 @@
     margin: 0px;
     font-size: 1.1em;
     line-height: 1.8em;
+}
+
+@media all and (max-width: 500px) {
+    .decorative-image-website {
+        height: 300px;
+    }
+
+    .link-see-announcements span {
+        font-size: 1.4em;
+    }
 }

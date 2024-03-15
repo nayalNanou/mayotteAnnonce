@@ -12,9 +12,7 @@
 			@include('fragment/navigation_bar')
 
             <main>
-                <h2>Bienvenue sur votre tableau de bord, {{ $user['firstname'] }} {{ $user['lastname'] }}</h2>
-
-				<h3>The current UNIX timestamp is {{ time() }}.</h3>
+                <h2 class="welcome-message">Bienvenue sur votre tableau de bord, {{ $user['firstname'] }} {{ $user['lastname'] }}</h2>
 
 				<div class="dashboard">
 					<div class="left-side">
